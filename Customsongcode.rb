@@ -1,21 +1,26 @@
-
 use_bpm 126
 use_synth :piano
 
-define :crowd1 do
+
+
+
+define :crowd do
   sample "C:/Users/nguyen_tran/Downloads/Concert Audience Background  Human Sounds.wav"
   
-  sleep 8
-end
-
-define :crowd2 do
-  sample "C:/Users/nguyen_tran/Downloads/Concert Audience Background  Human Sounds.wav", amp: 4
   
 end
 
-crowd1
+amp_level = 0.2
 
-crowd2
+8.times do
+  sample "C:/Users/nguyen_tran/Downloads/Concert Audience Background  Human Sounds.wav", amp: amp_level
+  sleep 0.5
+  amp_level = amp_level + 0.2
+end
+
+
+crowd
+sleep 10
 
 #Define to call the function without repeating
 define :vocal do
@@ -56,8 +61,10 @@ define :melody1 do
   sample :ambi_choir, amp: 0.4
   play_chord [:Eb5, :G5, :Bb5, :D5], release: 2, amp: 0.3
   sleep 4
+  
+  
+  
 end
-
 
 define :melody2 do
   sample :ambi_choir, amp: 0.4
@@ -90,66 +97,84 @@ define :melody6 do
 end
 
 
-with_fx :gverb , mix: 0.35 do
+with_fx :gverb, mix: 0.35 do
   live_loop :intro do
     5.times do
-      play :E3, sustain: 0.75, amp: 0.25
+      
+      play :E3, sustain: 0.75, amp: 0.4
       sleep 1
-      sample   :drum_bass_soft, amp: 0.25
+      sample :drum_bass_soft, amp: 0.4
       sleep 0.55
-      play :B3, sustain: 16, amp: 0.15
-      play :Ds4, sustain: 14, amp: 0.25, release: 3
-      play :Gs4, sustain: 16, amp: 0.25
+      
+      chord1 = [:B3, :Ds4, :Gs4]
+      chord1.each do |n|
+        play n, sustain: 14, amp: 0.4
+      end
+      
       sleep 1.45
-      sample   :drum_bass_soft, amp: 0.35
+      sample :drum_bass_soft, amp: 0.4
       sleep 1
       
       
-      play :Ds3, sustain: 0.65, amp: 0.25
+      play :Ds3, sustain: 0.65, amp: 0.4
       sleep 1
-      sample   :drum_bass_soft, amp: 0.25
+      sample :drum_bass_soft, amp: 0.4
       sleep 0.55
-      play :Cs4, sustain: 10, amp: 0.15
-      play :Ds4, sustain: 10, amp: 0.25, release: 3
-      play :G4, sustain: 10, amp: 0.25
+      
+      chord2 = [:Cs4, :Ds4, :G4]
+      chord2.each do |n|
+        play n, sustain: 10, amp: 0.4
+      end
+      
       sleep 1.45
-      sample   :drum_bass_soft, amp: 0.35
+      sample :drum_bass_soft, amp: 0.4
       sleep 1
       
       
-      play :Gs2, sustain: 0.65, amp: 0.25
+      play :Gs2, sustain: 0.65, amp: 0.4
       sleep 1
-      sample   :drum_bass_soft, amp: 0.25
+      sample :drum_bass_soft, amp: 0.4
       sleep 0.55
-      play :Fs3, sustain: 10, amp: 0.15
-      play :B3, sustain: 10, amp: 0.25, release: 3
-      play :Ds4, sustain: 10, amp: 0.25
+      
+      chord3 = [:Fs3, :B3, :Ds4]
+      chord3.each do |n|
+        play n, sustain: 10, amp: 0.4
+      end
+      
       sleep 1.45
-      sample   :drum_bass_soft, amp: 0.35
+      sample :drum_bass_soft, amp: 0.4
       sleep 1
       
       
-      play :E3, sustain: 0.65, amp: 0.25
-      sleep 0.5
-      play :A3, sustain: 0.65, amp: 0.25
-      sleep 0.5
-      play :E3, sustain: 0.65, amp: 0.3
-      play :A3, sustain: 0.65, amp: 0.4
-      play :Cs4, sustain: 0.65, amp: 0.4
+      melody1 = [:E3, :A3]
+      melody1.each do |n|
+        play n, sustain: 0.65, amp: 0.4
+        sleep 0.5
+      end
+      
+      chord4 = [:E3, :A3, :Cs4]
+      chord4.each do |n|
+        play n, sustain: 0.65, amp: 0.55
+      end
+      
       sleep 1
-      play :B3, sustain: 0.65, amp: 0.3
-      sleep 0.5
-      play :Cs4, sustain: 0.65, amp: 0.3
-      sleep 0.5
-      play :B3, sustain: 0.65, amp: 0.35
-      play :Cs4, sustain: 0.65, amp: 0.45
-      play :Gs4, sustain: 0.65, amp: 0.45
+      
+      melody2 = [:B3, :Cs4]
+      melody2.each do |n|
+        play n, sustain: 0.65, amp: 0.45
+        sleep 0.5
+      end
+      
+      chord5 = [:B3, :Cs4, :Gs4]
+      chord5.each do |n|
+        play n, sustain: 0.65, amp: 0.6
+      end
+      
       sleep 1
+      
     end
     stop
-    
   end
-  
 end
 
 sleep 16
@@ -213,16 +238,16 @@ live_loop :choir_pad  do
       with_fx :hpf, cutoff: 70 do
         use_synth :hollow
         
-        play chord(:E3, :minor), sustain: 4, release: 2, amp: 8
+        play chord(:E3, :minor), sustain: 4, release: 2, amp: 10
         sleep 4
         
-        play chord(:Ds3, :major), sustain: 4, release: 2, amp: 8
+        play chord(:Ds3, :major), sustain: 4, release: 2, amp: 10
         sleep 4
         
-        play chord(:Gs2, :minor), sustain: 4, release: 2, amp: 8
+        play chord(:Gs2, :minor), sustain: 4, release: 2, amp: 10
         sleep 4
         
-        play chord(:E3, :major), sustain: 4, release: 2, amp: 8
+        play chord(:E3, :major), sustain: 4, release: 2, amp: 10
         sleep 4
       end
     end
@@ -230,3 +255,4 @@ live_loop :choir_pad  do
   
   stop
 end
+
