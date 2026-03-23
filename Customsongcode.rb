@@ -1,11 +1,10 @@
 use_bpm 126
 use_synth :piano
 
-
-
-
+human_sounds="C:/Users/nguyen_tran/Downloads/Concert Audience Background  Human Sounds.wav"
+human_vocal="C:/Users/nguyen_tran/Desktop/Jungkook- Seven Clean ver. Acapella.wav"
 define :crowd do
-  sample "C:/Users/nguyen_tran/Downloads/Concert Audience Background  Human Sounds.wav"
+  sample human_sounds
   
   
 end
@@ -13,7 +12,7 @@ end
 amp_level = 0.2
 
 8.times do
-  sample "C:/Users/nguyen_tran/Downloads/Concert Audience Background  Human Sounds.wav", amp: amp_level
+  sample human_sounds, amp: amp_level
   sleep 0.5
   amp_level = amp_level + 0.2
 end
@@ -24,7 +23,7 @@ sleep 10
 
 #Define to call the function without repeating
 define :vocal do
-  sample "C:/Users/nguyen_tran/Desktop/Jungkook- Seven Clean ver. Acapella.wav", amp: 1.5
+  sample human_vocal , amp: 1.5
 end
 
 define :drum_loop1 do
