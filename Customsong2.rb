@@ -8,11 +8,11 @@ live_loop :chords do
     play_chord [:E2, :E3, :G3, :B3, :D4], sustain: 200, release: 200, amp: 4.5
     sleep 2.65
     play_chord [:A2, :A3, :G3, :B3, :D4], sustain: 200, release: 200, amp: 4.5
-    sleep 1
+    sleep 0.98
     play :Cs4, sustain: 100, release: 200, amp: 1.5
     sleep 1
     play :A3, sustain: 100, release: 200, amp: 1.5
-    sleep 0.65
+    sleep 0.66
   end
 end
 
