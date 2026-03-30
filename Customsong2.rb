@@ -1,18 +1,20 @@
+use_bpm 60
+
 use_synth :piano
 live_loop :chords do
   with_fx :reverb, mix: -0, sync: :drum, room: 1 do
-    play_chord [:F2, :F3, :A3, :C3, :E4], sustain: 200, release: 200, amp: 4.5
+    play_chord [:F2, :F3, :A3, :C3, :E4], sustain: 400, release: 400, amp: 6
     sleep 2.65
-    play_chord [:C2, :C3, :G3, :C3, :E3], sustain: 200, release: 200, amp: 4.5
+    play_chord [:C2, :C3, :G3, :C3, :E3], sustain: 400, release: 400, amp: 6
     sleep 2.65
-    play_chord [:E2, :E3, :G3, :B3, :D4], sustain: 200, release: 200, amp: 4.5
+    play_chord [:E2, :E3, :G3, :B3, :D4], sustain: 400, release: 400, amp: 6
     sleep 2.65
-    play_chord [:A2, :A3, :G3, :B3, :D4], sustain: 200, release: 200, amp: 4.5
+    play_chord [:A2, :A3, :G3, :B3, :D4], sustain: 400, release: 400, amp: 6
     sleep 0.98
-    play :Cs4, sustain: 100, release: 200, amp: 1.5
+    play :Cs4, sustain: 300, release: 400, amp: 1.5
     sleep 1
-    play :A3, sustain: 100, release: 200, amp: 1.5
-    sleep 0.66
+    play :A3, sustain: 300, release: 400, amp: 1.5
+    sleep 0.67
   end
 end
 
