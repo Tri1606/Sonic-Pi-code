@@ -14,7 +14,7 @@ live_loop :chords do
     play :Cs4, sustain: 300, release: 400, amp: 1.5
     sleep 1
     play :A3, sustain: 300, release: 400, amp: 1.5
-    sleep 0.67
+    sleep 0.66
   end
 end
 
