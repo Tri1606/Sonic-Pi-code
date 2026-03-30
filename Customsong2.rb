@@ -1,4 +1,4 @@
-use_bpm 56.94
+use_bpm 56.93
 use_synth :piano
 beat_1="C:/Users/momen/Downloads/G Dragon - Black Recreated  Piano and Beat tutorial Y-one short na 1.wav"
 beat_2="C:/Users/momen/Downloads/G Dragon - Black Recreated  Piano and Beat tutorial Y-one short nn 2.wav"
@@ -20,20 +20,20 @@ Emin7=[:E2, :E3, :G3, :B3, :D4]
 Amaj7=[:A2, :A3, :G3, :B3, :D4]
 
 define :beat1 do
-  sample beat_1, sustain_level: 0.4, amp: 14
+  sample beat_1, sustain_level: 0.4, amp: 16
 end
 
 define :beat2 do
-  sample beat_2, sustain_level: 0.2, amp: 16
+  sample beat_2, sustain_level: 0.2, amp: 18
 end
 
 define :beat3 do
-  sample beat_3, sustain_level: 0.3, amp: 16
+  sample beat_3, sustain_level: 0.3, amp: 18
 end
 
 
 define :play_my_chord do |chord, slp|
-  play_chord chord, sustain: 4, release: 4, amp: 5
+  play_chord chord, sustain: 4, release: 4, amp: 7
   sleep slp
 end
 
@@ -103,7 +103,7 @@ end
 
 sleep 20.1
 
-sample vocal, sync: :piano , amp: 1.3
+sample vocal, sync: :piano , amp: 2.2
 
 sleep 9.6
 
