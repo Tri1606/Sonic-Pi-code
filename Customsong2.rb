@@ -6,7 +6,8 @@ beat_3="C:/Users/momen/Downloads/G Dragon - Black Recreated  Piano and Beat tuto
 
 wonky="C:/Users/momen/Downloads/Wonky.wav"
 
-vocal="C:/Users/momen/Downloads/Nice.wav"
+vocal="C:/Users/momen/Downloads/Real vocal.wav"
+
 
 transition_rain="C:/Users/momen/Downloads/Real rain.wav"
 
@@ -62,7 +63,7 @@ end
 sleep 4   # original sleep after walking sample
 live_loop :chords do
   with_fx :reverb, mix: 0.4, room: 1 do
-    16.times do
+    12.times do
       
       play_my_chord Fmaj7, 2.53
       play_my_chord Cmaj, 2.53
@@ -80,7 +81,7 @@ live_loop :chords do
 end
 
 live_loop :drum do
-  56.times do
+  40.times do
     beat1
     sleep 0.65
     beat2
@@ -101,16 +102,16 @@ live_loop :drum do
   stop
 end
 
-sleep 20.1
+sleep 19.19
 
-sample vocal, sync: :piano , amp: 2.2
+sample vocal, sync: :piano , amp: 2.4
 
 sleep 9.6
 
 amp_level = 0
 
 live_loop :wonky_sound do
-  14.times do
+  10.times do
     sample wonky, amp: amp_level, release: 10
     sleep 10
     amp_level = [amp_level + 0.5, 3.5].min
