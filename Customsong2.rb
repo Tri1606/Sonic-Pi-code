@@ -110,7 +110,7 @@ live_loop :drum do
   stop
 end
 
-sleep 19.21
+sleep 19.2
 
 sample vocal, sync: :piano , amp: 2.3
 
