@@ -1,4 +1,4 @@
-use_bpm 56.93
+use_bpm 56.95
 use_synth :piano
 beat_1="C:/Users/momen/Downloads/G Dragon - Black Recreated  Piano and Beat tutorial Y-one short na 1.wav"
 beat_2="C:/Users/momen/Downloads/G Dragon - Black Recreated  Piano and Beat tutorial Y-one short nn 2.wav"
@@ -102,7 +102,7 @@ live_loop :drum do
   stop
 end
 
-sleep 19.19
+sleep 19.21
 
 sample vocal, sync: :piano , amp: 2.4
 
