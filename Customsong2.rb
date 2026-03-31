@@ -43,7 +43,7 @@ amp_level = 0
 
 5.times do
   sample transition_rain, amp: amp_level
-  sleep 0.4
+  sleep 0.8
   amp_level = amp_level + 0.2
 end
 
@@ -112,7 +112,7 @@ end
 
 sleep 19.2
 
-sample vocal, sync: :piano , amp: 2.3
+sample vocal, sync: :piano , amp: 3
 
 sleep 9.6
 
