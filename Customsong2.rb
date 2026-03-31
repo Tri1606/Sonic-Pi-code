@@ -34,7 +34,7 @@ end
 
 
 define :play_my_chord do |chord, slp|
-  play_chord chord, sustain: 4, release: 4, amp: 7
+  play_chord chord, sustain: 4, release: 4, amp: 6
   sleep slp
 end
 
@@ -112,7 +112,7 @@ end
 
 sleep 19.21
 
-sample vocal, sync: :piano , amp: 2.4
+sample vocal, sync: :piano , amp: 2.3
 
 sleep 9.6
 
