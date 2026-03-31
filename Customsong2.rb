@@ -38,14 +38,22 @@ define :play_my_chord do |chord, slp|
   sleep slp
 end
 
-# Fade-out for transition_rain
-amp_level = 1    # start at full volume
-fade_steps = 5   # number of steps for fade
+# Fade-in
+amp_level = 0
 
-fade_steps.times do
+5.times do
   sample transition_rain, amp: amp_level
-  sleep 0.4      # adjust for smoothness
-  amp_level = amp_level - 0.2   # decrease amp gradually
+  sleep 0.4
+  amp_level = amp_level + 0.2
+end
+
+sleep 1  # optional: stay at full volume briefly
+
+# Fade-out
+5.times do
+  sample transition_rain, amp: amp_level
+  sleep 0.4
+  amp_level = amp_level - 0.2
 end
 
 sleep 2   # original sleep after rain sample
