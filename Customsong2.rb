@@ -41,9 +41,9 @@ end
 # Fade-in
 amp_level = 0
 
-5.times do
+4.times do
   sample transition_rain, amp: amp_level
-  sleep 0.8
+  sleep 0.15
   amp_level = amp_level + 0.2
 end
 
