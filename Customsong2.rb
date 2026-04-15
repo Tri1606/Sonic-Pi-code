@@ -25,16 +25,8 @@ Amaj7=[:A2, :A3, :G3, :B3, :D4]
 
 
 # Functions for my drum sounds to keep the code cleaner and easier to manage
-define :beat1 do
-  sample beat_1, sustain_level: 0.4, amp: 16
-end
-
-define :beat2 do
-  sample beat_2, sustain_level: 0.2, amp: 18
-end
-
-define :beat3 do
-  sample beat_3, sustain_level: 0.3, amp: 18
+define :play_beat do |beat, sustain_lvl, volume|
+  sample beat, sustain_level: sustain_lvl, amp: volume
 end
 
 
@@ -110,21 +102,21 @@ live_loop :drum do
   
   # First section of the beat
   24.times do
-    beat1
+    play_beat beat_1, 0.4, 16
     sleep 0.65
-    beat2
+    play_beat beat_2, 0.2, 18
     sleep 0.34
-    beat3
+    play_beat beat_3, 0.3, 18
     sleep 0.16
-    beat3
-    beat1
+    play_beat beat_3, 0.3, 18
+    play_beat beat_1, 0.4, 16
     sleep 0.43
-    beat3
-    beat1
+    play_beat beat_3, 0.3, 18
+    play_beat beat_1, 0.4, 16
     sleep 0.32
-    beat2
+    play_beat beat_2, 0.2, 18
     sleep 0.15
-    beat3
+    play_beat beat_3, 0.3, 18
     sleep 0.48
   end
   
@@ -133,21 +125,21 @@ live_loop :drum do
   
   # Second section of the beat
   8.times do
-    beat1
+    play_beat beat_1, 0.4, 16
     sleep 0.65
-    beat2
+    play_beat beat_2, 0.2, 18
     sleep 0.34
-    beat3
+    play_beat beat_3, 0.3, 18
     sleep 0.16
-    beat3
-    beat1
+    play_beat beat_3, 0.3, 18
+    play_beat beat_1, 0.4, 16
     sleep 0.43
-    beat3
-    beat1
+    play_beat beat_3, 0.3, 18
+    play_beat beat_1, 0.4, 16
     sleep 0.32
-    beat2
+    play_beat beat_2, 0.2, 18
     sleep 0.15
-    beat3
+    play_beat beat_3, 0.3, 18
     sleep 0.48
   end
   
